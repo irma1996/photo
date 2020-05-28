@@ -1,32 +1,25 @@
-const express=require('express');
-const router= express.Router();
-const models=require('../models');
+const express =require('express');
+const router = express.Router();
+const albumController = require('../controllers/album_controller');
  
-/* GET / */
-router.get('/', async (req, res) => {
-  const all_album = await models.Album.findAll();
-  console.log('all album', all_album)
 
-  res.send({ 
-      status:'success',
-      data:{
-      albums: all_album
-  
-      } 
-  });
-});
+/* GET all resources / */
+router.get('/', albumController.index); 
 
 
-/* GET :id / */
-router.get('/:id', async (req, res) => {
-    const first_album = await models.Album.findByPk(req.params.id);
-    console.log('first album', first_album)
- 
-    res.send({ status:'give me all the photos', data:{first_album} });
-  });
- 
+/* GET a specific resource / */
+router.get('/:id', albumController.show); 
+
+
+/* POST  store a new resources/ */
+router.post('/', albumController.store); 
+
+
+/* UPDATE a specific resources / */
+router.put('/', albumController.update); 
+
+
 module.exports = router;
-
 
 
     
