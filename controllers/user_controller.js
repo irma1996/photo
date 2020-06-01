@@ -1,3 +1,4 @@
+const bcrypt = require('bcrypt');
 const { matchedData,validationResult} = require('express-validator');
 const models=require('../models');
 
@@ -30,6 +31,20 @@ const errors = validationResult(req);
  }
 
 const validData = matchedData(req);
+
+//generate a hash of 'validData.password'
+try{
+     const hash = await bcrypt.hash(validData.password, models.User.hashSaltRounds)
+     validData.password = hash;   
+
+}catch(error){  
+        res.status(500).send({
+                status:'error',
+                message: 'Exception thrown when hashing the password',
+        });
+        throw errors;
+
+}
         try{
             const user = await new models.User(validData).save();
             console.log('Created new user', user);
@@ -53,6 +68,7 @@ const validData = matchedData(req);
 // UPDATE  a specific resources 
 const update =async(req,res) =>{
         const userId =req.params.userId;
+        
         const user = await new models.User({ id: userId}).fetch({ require:false }); 
         if(!user) {
              console.log("User to update was not found", errors.array());
@@ -63,8 +79,8 @@ const update =async(req,res) =>{
         return;
 }
 
-                
-const validData = matchedData(req);
+
+        const validData = matchedData(req);
         try{
                 const updatedUser = await user.save(validData);
                 console.log('Updated user successfully', updatedUser);
@@ -72,14 +88,14 @@ const validData = matchedData(req);
                 res.send({
                 status: 'success',
                 data:{
-                        user,
+                        user: updatedUser,
                 },
         });
                 
         }catch (error){   
                 res.status(500).send({
                 status: 'error',
-                message: 'Exception thrwon in database when updating a new user'
+                message: 'Exception thrown in database when updating a new User'
                 });   
         throw error;
         }

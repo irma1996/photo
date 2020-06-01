@@ -4,19 +4,19 @@ const albumController = require('../controllers/album_controller');
  
 
 /* GET all resources / */
-router.get('/', albumController.index); 
+router.get('/albums', albumController.index); 
 
 
 /* GET a specific resource / */
-router.get('/:id', albumController.show); 
+router.get('/albums/:id', albumController.show); 
 
 
 /* POST  store a new resources/ */
-router.post('/', albumController.store); 
+router.post('/albums', albumController.store); 
 
 
 /* UPDATE a specific resources / */
-router.put('/', albumController.update); 
+router.put('/photos/:photoid', albumController.update); 
 
 
 module.exports = router;
