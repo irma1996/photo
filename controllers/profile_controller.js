@@ -11,7 +11,7 @@ const {User} = require('../models');
         if(!req.user){
         
         res.status(401).send({
-                status:'fail',
+                statusc:'fail',
                 data: 'Authentication Required.'
           });
           return;
@@ -43,6 +43,7 @@ const {User} = require('../models');
         const user = await new User ({id: userId})
         .fetch({withRelated: 'albums'});
         
+       
         const albums = user.related('albums')
         
         res.send({

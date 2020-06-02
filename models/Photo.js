@@ -8,5 +8,6 @@ module.exports = (bookshelf) => {
         users() {
             return this.belongsTo('User');
         },
+          
     });
 }

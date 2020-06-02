@@ -1,30 +1,27 @@
 const { matchedData, validationResult } = require('express-validator');
 const models = require('../models');
-const { Album } =require('../models');
+const { Photo } =require('../models');
 
 //GET/
-const index = async (req,res) =>{  
-        
-        const albums = await models.Album.fetchAll();
+const index = async (req, res) => {
+        const photos = await models.Photo.fetchAll()
        
-        res.send({ status:'success', data:{albums} });
+        res.send({ status: 'success', data:{photos} });
 };
 
-//GET/:albumId
-const show = async(req,res) =>{
-
-        const album = await new models.Album({ id: req.params.id })
-        .fetch({withRelated: ['photos']});
-    
-        res.send({ status:'success', data:{album }});
+//GET/:photoId
+const show = async (req, res) => {
+        const photo = await new models.Photo({ id: req.params.id })
+        .fetch({withRelated: ['albums', 'users']});
+       
+        res.send({ status: 'success', data:{photo} });      
 };
-
 
 //POST
 const store = async (req,res) => {
         const errors = validationResult(req);
                 if(!errors.isEmpty()) {
-                   console.log('Create album request failed validation:', errors.array());
+                   console.log('Create photo request failed validation:', errors.array());
                    res.status(422).send({
                         status: 'fail',
                         data: errors.array(),
@@ -36,27 +33,27 @@ const store = async (req,res) => {
         
         
         try{
-        const album = await new Album(validData).save();
-        console.log("Created new album successfully:", album);
+        const photo = await new Photo(validData).save();
+        console.log("Created new photo successfully:", photo);
         
         res.send({
                 status: 'success',
                 data: {
-                        album,
+                        photo,
                 },
          });
         }catch(error){  
                 res.status(500).send({
                         status:'error',
-                        message: 'Exception thrown in database when creating a new album',
+                        message: 'Exception thrown in database when creating a new photo',
                 });
                 throw errors;
         
         }
 }             
         
-
-// UPDATE  a specific resources 
+        
+     // UPDATE  a specific resources 
 const update =(req,res) =>{
         res.status(405).send({
            status: 'fail',
@@ -64,8 +61,6 @@ const update =(req,res) =>{
 
         });
 };
-
-
 
 
 module.exports ={

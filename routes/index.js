@@ -12,7 +12,7 @@ router.get('/', (req, res,)=> {
 router.use('/albums', require('./album'));
 router.use('/photos', require('./photo'));
 router.use('/profile',[auth.basic], require('./profile'));
-router.use('/users', require('./users'));
+router.use('/register', require('./users'));
 
 
 

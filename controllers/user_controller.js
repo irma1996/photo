@@ -78,6 +78,16 @@ const update =async(req,res) =>{
               });  
         return;
 }
+        // Finds the validation errors in this request and wraps them in an object with handy functions
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+                console.log("Update user request failed validation:", errors.array());
+                res.status(422).send({
+                   status: 'fail',
+                   data: errors.array(),
+        });
+        return;
+}
 
 
         const validData = matchedData(req);
@@ -86,16 +96,16 @@ const update =async(req,res) =>{
                 console.log('Updated user successfully', updatedUser);
              
                 res.send({
-                status: 'success',
-                data:{
+                   status: 'success',
+                   data:{
                         user: updatedUser,
                 },
         });
                 
         }catch (error){   
                 res.status(500).send({
-                status: 'error',
-                message: 'Exception thrown in database when updating a new User'
+                    status: 'error',
+                    message: 'Exception thrown in database when updating a new User'
                 });   
         throw error;
         }
