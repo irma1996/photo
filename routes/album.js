@@ -14,6 +14,8 @@ router.get('/albums/:id', albumController.show);
 /* POST  store a new resources/ */
 router.post('/albums', albumsValidationRules.createRules, albumController.store); 
 
+/* Store a new resource */
+router.post('/albums/:albumId/photos', albumsValidationRules.photoToAlbum, albumController.addAlbumsToPhoto);
 
 /* UPDATE a specific resources / */
 router.put('/photos/:photoid', albumController.update); 

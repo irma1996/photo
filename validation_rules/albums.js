@@ -10,6 +10,11 @@ const createRules = [
     body('user_id').optional().isLength({ min: 1 }), 
 ];
 
+const photoToAlbum = [body('photo_id').custom(value => {
+    return models.Photo.fetchById(value);
+    }) 
+];
+
 
 const updateRules = [
     body('password').optional().isLength({ min:3}),
@@ -19,6 +24,7 @@ const updateRules = [
 
 
 module.exports = {
-    createRules, 
+    createRules,
+    photoToAlbum, 
     updateRules,
 }

@@ -1,6 +1,6 @@
 const { matchedData, validationResult } = require('express-validator');
 const models = require('../models');
-const { Album } =require('../models');
+const { Album,Photo }=require('../models');
 
 //GET/
 const index = async (req,res) =>{  
@@ -54,7 +54,41 @@ const store = async (req,res) => {
         
         }
 }             
-        
+   //Photo to Album
+// POST /albums/:albumid/photo - Post photo to album 
+const addAlbumsToPhoto = async(req,res) =>{
+   
+        const error = validationResult(req);
+        if (!error.isEmpty()) {
+            res.status(422).send({
+                status: 'fail',
+                data: error.array()
+            })
+            return;
+        }
+       
+        try {
+        const photo = await Photo.fetchById(req.body.photo_id);
+        const album = await Album.fetchById(req.params.albumId);
+        console.log(album);
+        console.log(photo);
+
+
+        const photoToAlbum = await album.photos().attach([photo]);
+ 
+        res.status(201).send({
+            status: 'success',
+            data: photoToAlbum,
+        });
+ 
+    } catch (err) {
+        res.status(500).send({
+        status: 'error',
+        message: 'error when trying to add photo to album'
+        });
+        throw error;
+    }
+}
 
 // UPDATE  a specific resources 
 const update =(req,res) =>{
@@ -72,5 +106,6 @@ module.exports ={
     index,
     show,
     store,
+    addAlbumsToPhoto,
     update,
 }
