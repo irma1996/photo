@@ -9,7 +9,7 @@ module.exports = (bookshelf) => {
             return this.belongsTo('User');
         }},{ 
 			fetchById(id,fetchOptions = {}) {
-				return new this({ id }).fetch(fetchOptions);
+			return new this({ id }).fetch(fetchOptions);
 		} 
     });
 }

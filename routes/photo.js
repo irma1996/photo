@@ -12,7 +12,6 @@ router.get('/photos/:id',photoController.show);
 
 
 /* POST  store a new resources/ */
-//router.post('/photos',photoController.store); 
 router.post('/photos', photosValidationRules.createRules, photoController.store); 
 
 /* UPDATE a specific resources / */

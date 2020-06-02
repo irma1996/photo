@@ -11,10 +11,10 @@ const index = async (req, res) => {
 
 //GET/:photoId
 const show = async (req, res) => {
-        const photo = await new models.Photo({ id: req.params.id })
+const photo = await new models.Photo({ id: req.params.id })
         .fetch({withRelated: ['albums', 'users']});
        
-        res.send({ status: 'success', data:{photo} });      
+                res.send({ status: 'success', data:{photo} });      
 };
 
 //POST

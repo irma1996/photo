@@ -6,10 +6,8 @@ const albumsValidationRules = require ('../validation_rules/albums');
 /* GET all resources / */
 router.get('/albums', albumController.index); 
 
-
 /* GET a specific resource / */
 router.get('/albums/:id', albumController.show); 
-
 
 /* POST  store a new resources/ */
 router.post('/albums', albumsValidationRules.createRules, albumController.store); 

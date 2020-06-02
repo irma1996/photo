@@ -21,7 +21,6 @@ module.exports = (bookshelf) => {
              
              const hash = user.get('password');  
 
-        
              
              return (await bcrypt.compare(password, hash))
              ? user

@@ -69,7 +69,7 @@ try{
 const update =async(req,res) =>{
         const userId =req.params.userId;
         
-        const user = await new models.User({ id: userId}).fetch({ require:false }); 
+const user = await new models.User({ id: userId}).fetch({ require:false }); 
         if(!user) {
              console.log("User to update was not found", errors.array());
                 res.status(404).send({
@@ -90,14 +90,14 @@ const update =async(req,res) =>{
 }
 
 
-        const validData = matchedData(req);
+const validData = matchedData(req);
         try{
-                const updatedUser = await user.save(validData);
-                console.log('Updated user successfully', updatedUser);
+        const updatedUser = await user.save(validData);
+        console.log('Updated user successfully', updatedUser);
              
                 res.send({
-                   status: 'success',
-                   data:{
+                        status: 'success',
+                         data:{
                         user: updatedUser,
                 },
         });
