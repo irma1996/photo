@@ -1,0 +1,359 @@
+{
+	"info": {
+		"_postman_id": "d4017795-7ada-47ba-bdda-26f15a09827a",
+		"name": "photos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get / register",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n           \n            \"email\": \"anna.svensson@hotmail.com\",\n            \"password\": \"1db28221f66be290cb28d82ebe4a072a\",\n            \"first_name\": \"hej\",\n            \"last_name\": \"sommar \",\n            \"username\": \"sven\"\n        }\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/register/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"register",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get / register/2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n           \n            \"email\": \"anna.svensson@hotmail.com\",\n            \"password\": \"1db28221f66be290cb28d82ebe4a072a\",\n            \"first_name\": \"hej\",\n            \"last_name\": \"sommar \",\n            \"username\": \"sven\"\n        }\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/register/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"register",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET / photos/photos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/photos/photos/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"photos",
+						"photos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET / photos/photos/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/photos/photos/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"photos",
+						"photos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET/albums/albums/4",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/albums/albums/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"albums",
+						"albums",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET/albums/albums",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/albums/albums/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"albums",
+						"albums",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /profile/albums",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "hej",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "hej",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/profile/albums",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"profile",
+						"albums"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET / register/3",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "scriptkid",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "kalle",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n                \"id\": 3,\n                \"email\": \"vinter.andersson@hotmail.com\",\n                \"password\": \"kallt\",\n                \"first_name\": \"sommar\",\n                \"last_name\": \"andersson\",\n                \"username\": \"mats\"\n            },"
+				},
+				"url": {
+					"raw": "http://localhost:3000/register/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"register",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post/albums/albums/4/photos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n \"photo_id\": \"3\" \n\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/albums/albums/4/photos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"albums",
+						"albums",
+						"4",
+						"photos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST/ photos/photos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{        \n\t\t\t\"title\": \"kas\",\n            \"url\": \"och\",\n            \"comment\": \"ät\",\n            \"album_id\": \"13\",\n            \"user_id\": \"2\"\n            \n }         ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/photos/photos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"photos",
+						"photos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /albums/albums",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\t\t\t\n\t        \"title\": \"irm\",\n            \"photo_id\": \"13\",\n            \"user_id\": \"2\"\n \t\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/albums/albums",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"albums",
+						"albums"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST/ 3000/register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\n                \"id\": 1,\n                \"email\": \"armin.svensson@hotmail.com\",\n                \"password\": \"1db28221f66be290cb28d82ebe4a072a\",\n                \"first_name\": \"armin\",\n                \"last_name\": \"mumic \",\n                \"username\": \"armin\"\n            }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
