@@ -8,8 +8,7 @@ const createRules = [
     body('title').isLength({ min: 3 }),
     body('url').isLength({ min: 2 }),
     body('comment').optional().isLength({ min: 2 }),
-    body('album_id').optional().isLength({ min: 1 }),
-    body('user_id').optional().isLength({ min: 1 }),
+    body('user_id').optional().isLength({ min: 1 })
 ];
 
 

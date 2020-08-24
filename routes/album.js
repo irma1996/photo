@@ -4,19 +4,19 @@ const albumController = require('../controllers/album_controller');
 const albumsValidationRules = require ('../validation_rules/albums');
 
 /* GET all resources / */
-router.get('/albums', albumController.index); 
+router.get('/', albumController.index); 
 
 /* GET a specific resource / */
-router.get('/albums/:id', albumController.show); 
+router.get('/:id', albumController.show); 
 
 /* POST  store a new resources/ */
-router.post('/albums', albumsValidationRules.createRules, albumController.store); 
+router.post('/', albumsValidationRules.createRules, albumController.store); 
 
 /* Store a new resource */
-router.post('/albums/:albumId/photos', albumsValidationRules.photoToAlbum, albumController.addAlbumsToPhoto);
+router.post('/:albumId/photos', albumsValidationRules.photoToAlbum, albumController.addAlbumsToPhoto);
 
 /* UPDATE a specific resources / */
-router.put('/photos/:photoid', albumController.update); 
+router.put('/:photoid', albumController.update); 
 
 
 module.exports = router;

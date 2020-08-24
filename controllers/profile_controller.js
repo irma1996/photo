@@ -10,32 +10,32 @@ const {User} = require('../models');
 const getProfile = async (req,res) =>{  
         //const users = await models.User.fetchAll();
         if(!req.user){
-        res.status(401).send({
-                statusc:'fail',
-                data: 'Authentication Required.'
-          });
-          return;
+                 res.status(401).send({
+                         statusc:'fail',
+                        data: 'Authentication Required.'
+                });
+        return;
           
   }     
   
-        res.send({ 
-                status:'success',
-                data:{
-                        user:req.user,
-        } 
-   });
+res.send({ 
+                 status:'success',
+                        data:{
+                                user:req.user,
+                 } 
+         });
 };
+
 
 //Get the authenticated user's albums
 //GET/Albums
 const getAlbums = async (req,res) =>{
         if(!req.user) {
-        
-                res.status(401).send({
+            res.status(401).send({
                     status:'fail',
-                    data: 'Authentication Required.',
+                          data: 'Authentication Required.',
 
-        });
+                 });
         return;
 }
 
@@ -43,11 +43,11 @@ const userId = req.user.get('id');
 const user = await new User ({id: userId})
         .fetch({withRelated: 'albums'});
              
-const albums = user.related('albums')
-        res.send({
-                status:'success',
-                data:{
-                      albums,
+        const albums = user.related('albums')
+                 res.send({
+                         status:'success',
+                         data:{
+                                 albums,
                 } 
         });
  
@@ -60,9 +60,9 @@ const updateProfile = async (req, res) => {
                 status: 'error',
                 message: 'Exception thrown in database when updating a new Use'
         });   
-        throw error;
+throw error;
         
-        }         
+}         
 
 
 

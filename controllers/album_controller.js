@@ -4,19 +4,18 @@ const { Album,Photo }=require('../models');
 
 //GET/
 const index = async (req,res) =>{         
-const albums = await models.Album.fetchAll();
-
-        res.send({ status:'success', data:{albums} });
+        const albums = await models.Album.fetchAll();
+                res.send({ status:'success', data:{albums} 
+        });
 };
 
 
 //GET/:albumId
 const show = async(req,res) =>{
-const album = await new models.Album({ id: req.params.id })
-        .fetch({withRelated: ['photos']});
-    
-                res.send({ status:'success', data:{album }});
-
+        const album = await new models.Album({ id: req.params.id })
+                .fetch({withRelated: ['photos']});
+                        res.send({ status:'success', data:{album }
+                });
 };
 
 
@@ -25,25 +24,24 @@ const store = async (req,res) => {
         const errors = validationResult(req);
                 if(!errors.isEmpty()) {
                    console.log('Create album request failed validation:', errors.array());
-                   res.status(422).send({
-                        status: 'fail',
-                        data: errors.array(),
-                });
-                return;
-         }
+                        res.status(422).send({
+                                status: 'fail',
+                                data: errors.array(),
+                         });
+        return;
+}
         
 const validData = matchedData(req);
         
         try{
-                const album = await new Album(validData).save();
+        const album = await new Album(validData).save();
                 console.log("Created new album successfully:", album);
-        
-                res.send({
-                        status: 'success',
-                        data: {
-                                album,
-                },
-         });
+                        res.send({
+                                status: 'success',
+                                data: {
+                                        album,
+                                },
+        });
 
         }catch(error){  
                 res.status(500).send({
@@ -52,37 +50,37 @@ const validData = matchedData(req);
                 });
         throw errors;
         
-        }
+                }
 }             
 
 // POST /albums/:albumid/photo - Post album to photo 
 const addAlbumsToPhoto = async(req,res) =>{
    
-        const error = validationResult(req);
+const error = validationResult(req);
         if (!error.isEmpty()) {
             res.status(422).send({
-                status: 'fail',
-                data: error.array()
-            })
-            return;
-        }
+                        status: 'fail',
+                        data: error.array()
+                })
+        return;
+}
        
-        try {
 
-        const photo = await Photo.fetchById(req.body.photo_id);
-        const album = await Album.fetchById(req.params.albumId);
-        const photoToAlbum = await album.photos().attach([photo]);
+        try {
+                const photo = await Photo.fetchById(req.body.photo_id);
+                const album = await Album.fetchById(req.params.albumId);
+                const photoToAlbum = await album.photos().attach([photo]);
  
-                res.status(201).send({
-                        status: 'success',
-                        data: photoToAlbum,
-        });
+                        res.status(201).send({
+                                status: 'success',
+                                data: photoToAlbum,
+                         });
  
         } catch (err) {
                 res.status(500).send({
                         status: 'error',
                         message: 'error when trying to add photo to album'
-        });
+                });
         throw error;
     }
 }
