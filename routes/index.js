@@ -7,8 +7,8 @@ router.get('/', (req, res,)=> {
   res.send({ status: 'success' });
 });
 
-router.use('/albums', require('./album'));
-router.use('/photos', require('./photo'));
+router.use('/albums',[auth.basic], require('./album'));
+router.use('/photos',[auth.basic], require('./photo'));
 router.use('/profile',[auth.basic], require('./profile'));
 router.use('/register', require('./users'));
 

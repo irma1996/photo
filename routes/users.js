@@ -16,7 +16,7 @@ router.post('/', userValidationRules.createRules, usersController.store);
 
 
 /* UPDATE a specific resources / */
-router.put('/:userId',userValidationRules.updateRules,usersController.update); 
+router.put('/:userId',usersController.update); 
 
 
 module.exports = router;

@@ -1,40 +1,40 @@
 // Authentication middleware
-const bcrypt = require('bcrypt');
-const {User} = require('../../models');
+const bcrypt = require("bcrypt");
+const { User } = require("../../models");
 
-const basic = async(req, res, next) => {
-
-    //check if Authorization header exists, otherwise bail
-    if(!req.headers.authorization) {
-            res.status(401).send({
-                 status: 'fail',
-                 data: 'Authorization required',});
+const basic = async (req, res, next) => {
+  //check if Authorization header exists, otherwise bail
+  if (!req.headers.authorization) {
+    res.status(401).send({
+      status: "fail",
+      data: "Authorization required"
+    });
     return;
-} 
-    
-   // aXJtYTpoZWpzYW4xMjM=
-const [authSchema, base64payload] = req.headers.authorization.split(' ');
-    if (authSchema.toLowerCase() !== "basic"){
-        next();
-}
+  }
 
-const decodedpayload = Buffer.from(base64payload, 'base64').toString('ascii');
-   //password irma username:hello
-        const [username, password] = decodedpayload.split(':');
-   
-            const user = await User.login(username, password);
-                 if (!user) {
-                    res.status(401).send({
-                         status: 'fail',
-                            data: 'authorization failed'
-                    })
-            return;
-    }
+ 
+  const [authSchema, base64payload] = req.headers.authorization.split(" ");
+  if (authSchema.toLowerCase() !== "basic") {
+    next();
+  }
 
-req.user = user;
- next();
-}
+  const decodedpayload = Buffer.from(base64payload, "base64").toString("ascii");
+  
+  const [username, password] = decodedpayload.split(":");
+
+  const user = await User.login(username, password);
+  if (!user) {
+    res.status(401).send({
+      status: "fail",
+      data: "authorization failed"
+    });
+    return;
+  }
+
+  req.user = user;
+  next();
+};
 
 module.exports = {
-    basic,
-}
+  basic
+};
