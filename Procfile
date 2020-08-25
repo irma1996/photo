@@ -1,1 +1,1 @@
-web: node ./ben/www
+web: node ./bin/www
