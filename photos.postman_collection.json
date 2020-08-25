@@ -1,0 +1,491 @@
+{
+	"info": {
+		"_postman_id": "d4017795-7ada-47ba-bdda-26f15a09827a",
+		"name": "photos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET / photos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/photos/photos/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"photos",
+						"photos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET / photos (irma)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/photos/photos/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"photos",
+						"photos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET / photos (johan)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/photos/photos/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"photos",
+						"photos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET / photos (Irma)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/photos/photos/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"photos",
+						"photos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET / photos (Linda)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/photos/photos/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"photos",
+						"photos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET / photos/photos/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/photos/photos/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"photos",
+						"photos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET/albums/albums/4",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/albums/albums/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"albums",
+						"albums",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET/ albums (johan)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/albums/albums/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"albums",
+						"albums",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET/albums (irma)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/albums/albums/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"albums",
+						"albums",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET / albums (linda)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "hej",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "hej",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/profile/albums",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"profile",
+						"albums"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post/albums/albums/4/photos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n \"photo_id\": \"3\" \n\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/albums/albums/4/photos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"albums",
+						"albums",
+						"4",
+						"photos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST/ photos (lind)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{        \n\t\t\t\"title\": \"peld\",\n            \"url\": \"gyed\",\n            \"comment\": \"NSD\"\n }         ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/photos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"photos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST/ photos (johan)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{        \n\t\t\t\"title\": \"peld\",\n            \"url\": \"gyed\",\n            \"comment\": \"NSD\"\n }         ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/photos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"photos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST/ photos (Irma)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{        \n\t\t\t\"title\": \"peld\",\n            \"url\": \"gyed\",\n            \"comment\": \"NSD\"\n }         ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/photos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"photos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /albums (linda)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\t\t\t\n\t        \"title\": \"irm\",\n            \"photo_id\": \"13\",\n            \"user_id\": \"2\"\n \t\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/albums/albums",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"albums",
+						"albums"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /albums (johan)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\t\t\t\n\t        \"title\": \"irm\",\n            \"photo_id\": \"13\",\n            \"user_id\": \"2\"\n \t\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/albums/albums",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"albums",
+						"albums"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /albums (irma)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\t\t\t\n\t        \"title\": \"irm\",\n            \"photo_id\": \"13\",\n            \"user_id\": \"2\"\n \t\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/albums/albums",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"albums",
+						"albums"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST/ 3000/register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\n                \"id\": 5,\n                \"email\": \"msd.ten@hotmail.com\",\n                \"password\": \"1db28221f66be290cb28d82ebe4a072a\",\n                \"first_name\": \"ndk\",\n                \"last_name\": \"heo \"\n            }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://irmasphotos.herokuapp.com/album",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
